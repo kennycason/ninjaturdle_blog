@@ -1,0 +1,273 @@
+body {
+  color: black;
+  font-family:Georgia, serif;
+  font-size: 18px;
+  margin: 0px auto 0px auto;
+  width: 1000px;
+}
+
+a.clean-link :link {
+  text-decoration: none;
+  color: #111;
+}
+a.clean-link :visited {
+  text-decoration: none;
+  color: inherit;
+}
+a.clean-link :hover {
+  text-decoration: underline;
+  /*color: inherit;*/
+  color: #0099ff;
+}
+a.clean-link :active {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a :link {
+  text-decoration: underline;
+  /*color: inherit;*/
+  color: #0099ff;
+}
+a :visited {
+  text-decoration: none;
+  color: #0099ff;
+}
+a :hover {
+  text-decoration: underline;
+  color: #111;
+}
+a :active {
+  text-decoration: underline;
+  color: inherit;
+}
+
+#header {
+  float: left;
+  width: 1000px;
+  height: 75px;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+  padding: 5px 0px 0px 0px;
+}
+#header #logo {
+  background-image: url("/images/logo.png");
+  background-position: 0px 0px;
+  margin-left:0px;
+  display: block;
+  width: 480px;
+  height: 64px;
+  float: left;
+}
+
+#header #navigation {
+  text-align: right;
+}
+#header #navigation a {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#header #navigation a :hover {
+  color: #0099ff;
+}
+
+#content {
+  width: 1000px;
+}
+
+#content .left-column {
+  float: left;
+  width: 800px;
+  min-height: 400px;
+  display: block;
+}
+
+#content .right-column {
+  float: left;
+  width: 200px;
+  height: 100%;
+  display: block;
+}
+
+#footer {
+  background-image: url("/images/footer.gif");
+  float: left;
+  width: 960px;
+  height: 64px;
+  margin-top: 5px;
+  vertical-align: middle;
+}
+
+/*#content .right-column #sociallinks {
+  float: left;
+  width: 150px;
+}*/
+
+.social {
+  display: inline-block;
+  position: relative;
+  width: 115px;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background-color: rgba(231, 231, 231, 0.6);
+  box-shadow: 8px 8px 0 0px rgba(0, 0, 0, 0.25);
+}
+
+nav.social-bar {
+  padding-left: 30px;
+}
+nav.social-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav.social-bar ul li {
+  display: inline;
+}
+nav.social-bar ul li a {
+  text-decoration: none;
+}
+nav.social-bar ul li a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+nav.social-bar ul li a.brown_hover {
+  border-left: 35px solid #111111;
+  color: #111111;
+}
+nav.social-bar ul li a.brown_hover :hover {
+  border-left: 35px solid #98702b;
+  color: #98702b;
+}
+
+nav.social-bar ul li a.collection {
+  border-left: 35px solid #999999;
+  color: #999999;
+}
+nav.social-bar ul li a.collection :hover {
+  border-left: 35px solid #f34722;
+  color: #f34722;
+}
+nav.social-bar ul li a.tags {
+  border-left: 35px solid #AAAAAA;
+  color: #AAAAAA;
+}
+nav.social-bar ul li a.tags :hover {
+  border-left: 35px solid #634d40;
+  color: #634d40;
+}
+
+.social-share {
+  float: left;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 5px;
+  margin-left: 27px;
+}
+.social-share .facebook, .social-share .twitter, .social-share .reddit, .social-share .linkedin, .social-share .delicious, .social-share .digg, .social-share .rss {
+  float: left;
+  display: block;
+  background: url(/images/socialicons/vintage/social-share-small.png) no-repeat;
+  margin-right: 8px;
+}
+.social-share .facebook {
+  background-position: 0 -32px;
+  width: 32px;
+  height: 32px;
+}
+.social-share .facebook :hover {
+  background-position: 0 0;
+}
+.social-share .twitter {
+  background-position: -32px -32px;
+  width: 32px;
+  height: 32px;
+}
+.social-share .twitter :hover {
+  background-position: -32px 0;
+}
+.social-share .linkedin {
+  background-position: -64px -32px;
+  width: 32px;
+  height: 32px;
+}
+.social-share .linkedin :hover {
+  background-position: -64px 0;
+}
+.social-share .reddit {
+  background-position: -96px -32px;
+  width: 32px;
+  height: 32px;
+}
+.social-share .reddit :hover {
+  background-position: -96px 0;
+}
+.social-share .digg {
+  background-position: -128px -32px;
+  width: 32px;
+  height: 32px;
+}
+.social-share .digg :hover {
+  background-position: -128px 0;
+}
+.social-share .delicious {
+  background-position: -160px -32px;
+  width: 32px;
+  height: 32px;
+}
+.social-share .delicious :hover {
+  background-position: -160px 0;
+}
+.social-share .rss {
+  background-position: -192px -32px;
+  width: 32px;
+  height: 32px;
+}
+.social-share .rss :hover {
+  background-position: -192px 0;
+}
+
+
+.social-like {
+  width:100%;
+}
+
+.social-like .facebook {
+  display:inline;
+  margin-left: 0px;
+}
+
+.social-like .twitter {
+  display:inline;
+  margin-left: 0px;
+}
+
+.post-date {
+  font-size: 10px;
+  color: #555;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+div.info {
+  color: #555;
+  font-size: 14px;
+  font-style: italic;
+}
+
+table, th, td {
+   border: 1px solid;
+}

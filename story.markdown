@@ -1,0 +1,21 @@
+---
+title: Story
+---
+
+It was just another day for Mr. Turdle, walking through the peaceful caverns of his host. Mr. Turdle liked to check each chamber to ensure all was healthy and the flows were smooth.
+
+Daily chores included feeding the healthy bacteria which help keep things in check. Mr. Turdle would also do what he could to ensure acid levels remain stable.
+
+T'was the humble life of a Turdle.
+
+And he lived happily ever after...
+
+That was until one day when exploring the upper stomach, when Mr. Turdle noticed something very strange.
+
+The upper stomach was under attack!
+
+With no other choice Mr. Turdle knew what had to be done.
+
+He trained to become a Ninja Turdle and destroy all parasites and bacteria.
+
+<img src="/images/ninja_large.png"/>

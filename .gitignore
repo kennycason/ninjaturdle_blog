@@ -1,0 +1,9 @@
+.sass-cache/*
+_cache/*
+_site/*
+hakyll
+*.hi
+*.o
+/dist/
+gen/*
+.DS_Store
