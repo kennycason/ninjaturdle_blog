@@ -4,7 +4,7 @@ author: Kenny Cason
 tags: game design
 ---
 
-Before getting started on any large project, I reckon it's considered good practice to plan before you build. This doesn't mean you need to write a 100 page detailed design document, nor plan every single micro detail of the game. However, defining the basic story, game style, a few enemies, weapons, items, etc, is a good way to get a feel for the kind of game you want to develop. Pen and paper are ideal because it's easy to write down many ideas and iterate upon them quickly without much overhead. Diving directly into code is obviously very expensive and timely. This is also a good time to start asking yourself "what about your game is special?". If you can't find that special sauce that makes your game unique, that's ok, just keep that in the back of your mind for later. Chances are 75% of the initial ideas you come with will be scrapped or refactored anyways.
+Before getting started on any large project, I imagine it's considered good practice to plan before you build. This doesn't mean you need to write a 100 page detailed design document, nor plan every single micro detail of the game. However, defining the basic story, game style, a few enemies, weapons, items, etc, is a good way to get a feel for the kind of game you want to develop. Pen and paper are ideal because it's easy to write down many ideas and iterate upon them quickly without much overhead. Diving directly into code is obviously very expensive and timely. This is also a good time to start asking yourself "what is it about your game that is special?". If you can't find that special sauce that makes your game unique, that's ok, just keep that in the back of your mind for later. Chances are 75% of the initial ideas you come with will be scrapped or refactored anyways.
 
 The first thing I decided to lock down was the basic game mechanics. I decided to make a 2D side-scrolling platformer with a semi-open world to give the player a sense of explorability. Not dissimilar to my all time favorite game, Super Metroid.
 
@@ -59,9 +59,9 @@ A sample excerpt of the first ten minutes of game play:
 
 I have a running list of events like above for many sections of the game. I strive to write event flows and piece them together over time until I feel that I have a connected game. I don't typically worry about every micro detail along the way and have faith that the details will naturally work themselves out.
 
-Lastly, I start drawing out what each map will look like at a high level. Namely mapping which rooms connects to which rooms. I use this as a basis for designing room layout/design which I will ultimately design sprites for and maps via the Tiled map editor.  
+Lastly, I start drawing out what each map will look like at a high level. Namely mapping which rooms connect to which rooms. I use this as a basis for designing room layout/design which I will ultimately design sprites for and maps via the Tiled map editor.  
 
 The below image is what a simple example map design will look like for me. Then I fill in more detail such as the style of the room, items, special events, and such.
 <img src="/images/content/story_6.jpg" width="500px"/>
 
-This is the basic design process that I go through when designing Ninja Turdle. In short, I like to keep my designing/planning light-weight, and work to get something in place that I can quickly iterate on. In the next posts I will begin covering the actually implementation of these ideas into code.
+This is the basic design process that I go through when designing a video game. In short, I like to keep my designing/planning light-weight, and work to get something in place that I can quickly iterate on. In the next posts I will begin covering the actually implementation of these ideas into code.
