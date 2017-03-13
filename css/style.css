@@ -45,18 +45,38 @@ a :active {
 #header {
   float: left;
   width: 1000px;
-  height: 75px;
+  height: 128px;
   border-bottom: 2px solid black;
   margin-bottom: 10px;
   padding: 5px 0px 0px 0px;
 }
 #header #logo {
-  background-image: url("/images/logo.png");
+  background-image: url("/images/logo2.png");
   background-position: 0px 0px;
+  background-repeat: no-repeat;
   margin-left:0px;
   display: block;
-  width: 480px;
-  height: 64px;
+  width: 232px;
+  height: 128px;
+  float: left;
+}
+
+#header .screenshot {
+  background-image: url("/images/header_1.png");
+  background-position: 0px 0px;
+  margin-left: 2px;
+  display: block;
+  width: 380px;
+  height: 128px;
+  float: left;
+}
+#header .screenshot2 {
+  background-image: url("/images/header_2.png");
+  background-position: 0px 0px;
+  margin-left: 2px;
+  display: block;
+  width: 380px;
+  height: 128px;
   float: left;
 }
 
