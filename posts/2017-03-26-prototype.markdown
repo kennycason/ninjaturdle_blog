@@ -1,5 +1,5 @@
 ---
-title: Prototype - Part I
+title: Prototype - Part I - Project Setup & Structure
 author: Kenny Cason
 tags: game development, prototype
 ---
@@ -10,14 +10,15 @@ This post is a bit long as it involves a lot of boiler plate.
 
 ## Project Skeleton
 
-The first step for me was to get LibGDX setup. I won't go into details in setting up LibGDX as their [wiki](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle) does a pretty good job at it. I only had a few problems with some of the resource paths not being configured correctly in the Gradle files, but that was easy enough to fix. There are also straight forward instructions for importing the project into IntelliJ. I do wish the project used Maven instead of Gradle, but that's a minor complaint. A friend of mine converted his project to use Maven, so it is possible. Also notable was that I only configured the Desktop application and disabled the Html, iOS, and Android applications.
+The first step for me was to get LibGDX setup. I won't go into details in setting up LibGDX as their [wiki](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle) does a good job at it already. My only complaint is that the project uses Gradle instead of Maven. The only notable steps of my setup was that I only configured the Desktop application and disabled the Html, iOS, and Android applications.
 
-My Desktop Launcher instantiates my class `GameScreen` which extends LibGDX's `Screen` class. I also scale the screen by 3, making each pixel actually drawn as 3x3. You can optionally scale this however you want. This is also the only part of our code that is Java, simply because I didn't feel like configuring the whole module for Kotlin, all for one small class.
+My Desktop Launcher instantiates my class `GameScreen` which extends LibGDX's `Screen` class. I also scale the screen by 3, making each pixel actually drawn as 3x3 pixels. You can optionally scale this however you want. This is also the only part of our code that is Java, simply because I didn't feel like configuring the whole module for Kotlin, all for one small class.
 
 ```{.java .numberLines startFrom="1"}
 public class DesktopLauncher {
     public static void main (final String[] arg) {
-        final LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        final LwjglApplicationConfiguration config =
+                                new LwjglApplicationConfiguration();
         config.title = "Ninja Turdle";
         config.width = (int) (Constants.WIDTH * Constants.SCALE);
         config.height = (int) (Constants.HEIGHT * Constants.SCALE);
@@ -26,7 +27,7 @@ public class DesktopLauncher {
 }
 ```
 
-My basic starting skeleton includes basic state time handling, a camera, and basic preparation of the render loop.
+My basic starting skeleton includes simple state time handling, a camera, and basic preparation of the render loop.
 ```{.java .numberLines startFrom="1"}
 class GameScreen(private val gameContext: GameContext) : Screen {
 
@@ -41,16 +42,18 @@ class GameScreen(private val gameContext: GameContext) : Screen {
         Gdx.gl.glClearColor(0f, 0f, 0.0f, 1f)
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
 
-        gameContext.camera.update() // focus the camera (the camera currently doesn't move)
-
-        gameContext.batch.begin()   // prepare to draw
+        // focus the camera (the camera currently doesn't move)
+        gameContext.camera.update()
+        // prepare to draw
+        gameContext.batch.begin()  
 
         gameContext.batch.projectionMatrix = gameContext.camera.combined
-        gameContext.ninja.handle()  // handle Mr. Ninja
+        gameContext.ninja.handle()  
         // place holder for other entity handling, for example:
         // gameContext.enemies.forEach(Enemy::handle)
 
-        gameContext.batch.end()     // finish drawing
+         // finish drawing
+        gameContext.batch.end()    
     }
 
     override fun resize(width: Int, height: Int) {}
@@ -65,7 +68,7 @@ class GameScreen(private val gameContext: GameContext) : Screen {
 
 }
 ```
-Looking at the above `GameScreen` code you will notice the use of the `GameContext` variable. This is an object that I pass around that contains common game state variables. Such variables will include the `Ninja` object, bullets, enemies, items, the currently loaded map, etc. Keeping them in this central place makes it easier to keep up with global state. While I'm aware of the evilness of global state, games are very stateful by nature. In general, I start out simple, and as the state grows more complicated, I abstract state into classes that better aide in state management. We will see more examples of this later. The `GameContext` class at this point looks something like:
+Looking at the above `GameScreen` code you will notice the use of the `GameContext` variable. This is an object that I pass around that contains common game state variables. Such variables will include the `Ninja` object, bullets, enemies, items, the currently loaded map, etc. Keeping them in this central place makes it easier to keep up with global state. While I'm aware of the evilness of global state, games are very stateful by nature. In general, I start out simple, and as the state grows more complicated, I abstract state into classes that better aide in state management. We will see more examples of this later. The `GameContext` class looks something like:
 
 ```{.java .numberLines startFrom="1"}
 class GameContext(val game: Game) {
@@ -105,7 +108,7 @@ class GameContext(val game: Game) {
 
 With the project setup complete, and the skeleton in place, it is time to write our `Ninja` class which will contain all the information about our protagonist, Mr. Turdle. However, before we start we must first build up all the components that will go into the `Ninja`.
 
-I added a few state enums to keep up with some basic states. Below, I will highlight a couple sample states and how I use them.
+I added a few state enums to keep up with basic states. Below, I will highlight a couple sample states and how I use them.
 ```{.java .numberLines startFrom="1"}
 /**
  * A state enum to keep track of which direction an Entity is facing.
@@ -127,7 +130,7 @@ enum class MotionState {
 }
 ```
 
-Enums are value for keeping track of entity states because they allow for simpler state management. For example, later when we want to check if the player is walking or standing, we don't have to repeatedly perform checks like:
+Enums are valuable for keeping track of entity states because they allow for simpler state management and conditional branching. For example, later when we want to check if the player is walking or standing, we don't have to repeatedly perform checks like:
 ```{.java .numberLines startFrom="1"}
 if (Math.abs(velocity.x) > 0f) {
     // entity is walking
@@ -145,7 +148,7 @@ if (Math.abs(velocity.x) > 0f) {
 }
 ```
 
-And then in future code we can simply use switch/where statements on the state enum and not worry about the details of what defines a specific state:
+Then in future code we can use switch/when statements on the enum and not worry about the details of what specifically defines a state:
 ```{.java .numberLines startFrom="1"}
 when (state.motionState) {
     GravityState.WALKING -> {
@@ -157,7 +160,7 @@ when (state.motionState) {
 }
 ```
 
-Next was to load the textures, for now I'm just going to directly load them into a Texture class as static instances. There are more advanced methods for managing Textures via the (https://github.com/libgdx/libgdx/wiki/Texture-packer)[`TexturePacker` and `TextureAtlas`]. However, this seems to be a bit invasive to my development, especially early on, and considering I haven't used it. I will re-investigate later. My Textures class is pretty simple:
+Next was to load the textures, for now I'm just going to directly load them into a Texture class as static instances. There are more advanced methods for managing Textures via the (https://github.com/libgdx/libgdx/wiki/Texture-packer)[`TexturePacker` and `TextureAtlas`]. However, this seems to be a bit invasive to my development, especially early on, particularly because I haven't used it before. I will re-investigate later.
 ```{.java .numberLines startFrom="1"}
 object Textures {
     val TEXTURE_PATH = "sprite/"
@@ -214,20 +217,38 @@ abstract class Entity(val gameContext: GameContext,
                       val position: Vector2 = Vector2(),
                       val velocity: Vector2  = Vector2(),
                       val acceleration: Vector2  = Vector2(),
+                      val hitbox: Rectangle = Rectangle(),
                       var faceState: FaceState = FaceState.RIGHT,
                       var motionState: MotionState = MotionState.STANDING,
+                      var totalTime: Float = 0f,
                       var active: Boolean = true) {
 
+    // the primary method called to trigger all of an entities behaviors.                
     open fun handle() {
-        lifeTime += gameContext.deltaTime
+        // keep up with the total time the entity has been alive.
+        totalTime += gameContext.deltaTime
     }
 
-    fun timeSince(time: Float) = lifeTime - time
+    // measure the time elapsed from the beginning of the entity's life.
+    fun timeSince(time: Float) = totalTime - time
+
+    // a couple helper methods for setting position which set both the position
+    // and the hitbox's position.
+    fun setPosition(position: Vector2) {
+         setPosition(position.x, position.y)
+     }
+
+     open fun setPosition(x: Float, y: Float) {
+         position.set(x, y)
+         hitbox.setPosition(position)
+     }
 
 }
 ```
 
 The idea is that we will be able to iterate across our game entities and simply call the `handle()` function. The `handle()` will perform all actions that a particular entity should do during a time frame. This includes, moving, rendering, attacking, checking collisions, add new states to the `GameContext`, etc.
+
+The `hitbox` field represents the position and dimensions of the entity. This is primarily used for collision detection. We maintain this field because often times an entity's sprite dimensions do not correspond directly to the dimensions we want to use for collision. In practice the hitbox, tends to be a bit smaller than the sprites being displayed.
 
 We are at last finally able to create our `Ninja` class. :)
 ```{.java .numberLines startFrom="1"}
@@ -241,6 +262,7 @@ class Ninja(gameContext: GameContext) : Entity(gameContext) {
 
     init {
         state.faceState = FaceState.RIGHT
+        hitbox.setSize(standingRight.width, standingRight.height)
     }
 
     override fun handle() {
@@ -258,7 +280,8 @@ class Ninja(gameContext: GameContext) : Entity(gameContext) {
     }
 
     private fun draw() {
-        // note how we can cleanly use our state enums to determine which sprite to draw.
+        // note how we can cleanly use our state enums to determine which
+        // sprite to draw.
         when (state.faceState) {
             FaceState.RIGHT -> standingRight.draw(gameContext, position)
             FaceState.LEFT -> standingLeft.draw(gameContext, position)
@@ -284,15 +307,15 @@ class Ninja(gameContext: GameContext) : Entity(gameContext) {
     }
 
     private fun handleHorizontalMovement() {
-        // friction to gradually slow to a stop. this creates a better experience
-        // than abrupt stops.
+        // friction to gradually slow to a stop. this creates a better
+        // experience than abrupt stops.
         velocity.x *= Constants.HORIZONTAL_DAMPING
 
-        // because the time in between render loops can slightly vary, we want to
-        // scale the acceleration by that amount. This will prevent choppy motions
-        // during times where delta time jumps up and down.
-        // we add the acceleration to velocity because this gives a smooth feeling
-        // of acceleration like in Super Metroid or Super Mario World.
+        // because the time in between render loops can slightly vary, we
+        // want to scale the acceleration by that amount. This will prevent
+        // choppy motions during times where delta time jumps up and down.
+        // we add the acceleration to velocity because this gives a smooth
+        // feeling of acceleration like in Super Metroid
         velocity.x += acceleration.x * gameContext.deltaTime
 
         // no need to handle collisions if not moving
@@ -307,7 +330,7 @@ class Ninja(gameContext: GameContext) : Entity(gameContext) {
 }
 ```
 
-At this point we have introduced many constants. Below are some of their sample values. We are not currently using all the tile properties yet. However, in the next post when we implement the Tiled Map, we will use these values.
+At this point we have introduced many constants. Below are some of their sample values. We are not currently using all the tile properties yet. However, in the next post when we implement the Tiled Map, we will use these values. We will also introduce more constants for vertical motion.
 ```{.java .numberLines startFrom="1"}
 object Constants {
     const val BASE_WALK_ACCELERATION = 14f
@@ -334,9 +357,11 @@ At this point we have the basic code for:
 - The camera is locked and only Mr. Ninja would move across the screen (left and right)
 
 The next post will cover:
-- loading of `Tiled` maps
-- jumping
-- falling
-- collision detection
 
-<img src="/images/ninja_large.png"/>
+- Jumping
+- Falling
+
+The next next post will cover:
+
+- Loading of `Tiled` maps
+- Basic collision detection

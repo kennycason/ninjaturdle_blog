@@ -4,6 +4,7 @@ body {
   font-size: 18px;
   margin: 0px auto 0px auto;
   width: 1000px;
+  font-family: Lucida-Sans;
 }
 
 a.clean-link :link {
