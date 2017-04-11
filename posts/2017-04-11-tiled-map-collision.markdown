@@ -209,6 +209,8 @@ fun testLeft(entity: Entity): Collided? {
 }
 ```
 
+<img src="/images/content/tiled_map_integration.png" width="500px"/>
+
 ## Conclusion
 
 With the addition of the above code, Mr. Ninja now has the ability to jump, fall and move around within a `Tiled` Map. However, there is still one large problem. The map does not scroll!
