@@ -17,7 +17,7 @@ At this point in our prototype we will avoid going too far into the weeds in col
 Before starting the collision checker, there are a few details I think are worth pointing out.
 
 1. When checking for collision in any direction, it's convenient to test for where the entity *will* travel, as opposed to where the entity currently is. This means when falling, we will first add the current velocity to Mr. Ninja's position, and then test for collision.
-2. When Mr. Ninja is `Grounded`, he will actually be one pixel *above* the ground. Mr. Ninja's `velocity.y` and `acceleration.y` will both be zero. What this means is that vertical collision detection will trigger Mr. Ninja to immediately begin falling as he will not be colliding with the ground. Adding a special check to test one pixel below Mr. Ninja when in `Grounded` state can easily resolve this problem.
+2. When Mr. Ninja is `Grounded`, he will actually be one pixel *above* the ground. Mr. Ninja's `velocity.y` and `acceleration.y` will both be zero. What this means is that vertical collision detection will trigger Mr. Ninja to immediately begin falling as he will not be colliding with the ground. Adding a special check insdied `testDown()` to test one pixel below Mr. Ninja when in `Grounded` state can easily resolve this problem.
 3. Instead of our collision detector returning simple boolean values for collision, it will also return information about what the entity collided with. For now it will just return the ceiling or floors y-value. However, when we introduce our Tiled map, it will return the actual tile that the entity collided with. This is **very** useful for making post-collision decisions based on the tile's position.
 
 ```{.java .numberLines startFrom="1"}
@@ -28,24 +28,18 @@ class CollisionChecker(private val gameContext: GameContext,
     // test whether or not we collide with the ground
     fun testDown(entity: Entity): Float? {
         // temporarily translate entity's y position
-        entity.position.y += entity.velocity.y
+        entity.position.y += entity.velocity.y - 1
 
         // check to see if entity is below our fixed ground level
         val collided: Boolean = entity.position.y <= groundLevel
 
         // undo previous translation
-        entity.position.y -= entity.velocity.y
+        entity.position.y -= entity.velocity.y + 1
 
         // we didn't return anything, so don't return a collided object.
         if (!collided) { return null }
         return groundLevel
     }
-
-    fun testOneBelow(entity: Entity): Float? {
-        // similar to testDown() except we will only translate position.y
-        // by 1.0f instead of by entity.velocity.y
-    }
-
 
     // test whether or not we collide with the ceiling
     fun testUp(entity: Entity): Float? {
