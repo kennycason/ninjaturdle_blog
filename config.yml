@@ -1,0 +1,15 @@
+title: Ninja Turdle
+email: mrturdle@ninjaturdle.com
+description: A shitty adventure.
+base_url: http://ninjaturdle.com
+deploy: deploy_ninjaturdle # rsync alias
+template_engine: handlebars
+posts:
+    directory: posts
+    template: post.hbs
+pages:
+    - index.hbs
+    - download.hbs
+    - story.hbs
+directories:
+    - assets

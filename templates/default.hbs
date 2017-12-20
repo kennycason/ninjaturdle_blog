@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Ninja Turdle - {{ title }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/ico" href="/assets/favicon.ico" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <meta content="http://ninjaturdle.com/assets/images/logo.png" property="og:image"></meta>
+    <meta content="Kenny Cason" property="og:site_name"></meta>
+    <meta content="20611488" property="fb:admins"></meta>
+    <meta content="Ninja Turdle - {{ title}} "< property="og:description"></meta>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91456780-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <a href="/">
+            <div id="logo"></div>
+        </a>
+        <div class="screenshot"></div>
+        <div class="screenshot2"></div>
+    </div>
+</header>
+
+<div id="body" class="container">
+    <div class="col-md-8">
+        {{{ content }}}
+    </div>
+    <div class="col-md-4">
+
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4>Main</h4>
+          </div>
+          <ul class="list-group">
+              <li class="list-group-item"><a href="/story.html">Story</a></li>
+              <li class="list-group-item"><a href="/download.html">Download</a></li>
+          </ul>
+      </div>
+
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4>Latest Posts</h4>
+          </div>
+          <ul class="list-group">
+              {{#each posts}}
+                  <li class="list-group-item"><a href="{{ this.url }}"><!--{{ this.date }} - -->{{ this.title }} </a></li>
+              {{/each}}
+          </ul>
+      </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Links</h4>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"><a target="_blank" href="https://libgdx.badlogicgames.com/">Lib<font color="red">GDX</font></a></li>
+                <li class="list-group-item"><a target="_blank" href="https://github.com/kennycason">Github</a></li>
+                <li class="list-group-item"><a target="_blank" href="https://facebook.com/theninjaturdle">Facebook</a></li>
+                <li class="list-group-item"><a target="_blank" href="https://twitter.com/TheNinjaTurdle">Twitter</a></li>
+                <li class="list-group-item"><a target="_blank" href="http://kakyll.com">Kakyll</a></li>
+            </ul>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Tags</h4>
+            </div>
+            <div class="panel-body">
+                <ul class="list-inline">
+                    {{#each tag_cloud}}
+                        <li class="tag"><a href="#">{{ this.tag }} ({{ this.count }})</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer>
+    <div class="container">
+      <div class="footer-image"></div><br/>
+      <div class="text-center">Copyright © NinjaTurdle 2017-2018. All rights reserved.</div><br/>
+    </div>
+</footer>
+</body>
+</html>

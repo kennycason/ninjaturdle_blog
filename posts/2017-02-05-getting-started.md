@@ -12,7 +12,7 @@ It's 50% excitement about your new idea. The thrill of starting a new codebase a
 
 The other 50% is the feeling of dread. When you open your workspace and see this:
 
-<img src="/images/content/workspace.png" width="300px"/>
+<img src="/assets/images/content/workspace.png" width="300px"/>
 
 50+ projects; at least ten started, but incomplete games. Of course is only a fraction of your projects because there are countless others on GitHub, previous computers, and external HDDs. So what makes you think this game is going to be any different? After all, this quest will consume your evenings and weekends for the next years to come. You have a full time job, a family, so this is going to take a toll. You better really love it.
 
@@ -20,7 +20,7 @@ There is the added stress of what language do you develop in? Of course you know
 
 I'll let my Slack profile answer that.
 
-<img src="/images/content/kotlin_for_life.png"/>
+<img src="/assets/images/content/kotlin_for_life.png"/>
 
 In the end, as with any other large life decision, you just have to make a decision and own it. The worst that will happen is you will have some fun developing a game, and you may even learn something. Well, I guess worse things could happen, but I'll leave that for your imagination. Below I'll walk through my decisions at each step of the way, and how I got started.
 
@@ -44,7 +44,7 @@ My next challenge was to figure out what kind of graphics/style I wanted to supp
 
 Just for good measure, I popped it open and took a shot at rendering what Ninja Turdle may actually look like and this is what I came up with.
 
-<img src="/images/ninja_large.png"/>
+<img src="/assets/images/ninja_large.png"/>
 
 While Leonardo de Vinci would likely not be impressed, I definitely was pretty happy. It was with this single sprite, that all sprites would follow.
 

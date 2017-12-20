@@ -12,11 +12,11 @@ First we are going to use `Aseprite` to create a tile sheet to use in our map. N
 
 The tile sheet is essentially a large sprite that will contain all the tiles we intend on using in our map. Each tile is 16x16 pixel section of the tile sheet. Our first sprite sheet looks something like:
 
-<img src="/images/content/tiled_tilesheet.png" width="400px"/>
+<img src="/assets/images/content/tiled_tilesheet.png" width="400px"/>
 
 My tile sheet has since accumulated a few more tiles. I recommend not spending too much time on the tiles as they are very likely to change as you flush out your game more. That said, do whatever makes you enjoy programming your game. I'm not going to lie, I am pretty proud of those previous two tiles. :)
 
-<img src="/images/content/tiled_tilesheet_full.png" width="500px"/>
+<img src="/assets/images/content/tiled_tilesheet_full.png" width="500px"/>
 
 Now time to fire up `Tiled`.
 
@@ -24,7 +24,7 @@ Lets create a 100x17 map with one layer. Name that layer "main". We will identif
 
 A little bit of editing yields us with this beauty.
 
-<img src="/images/content/tiled_map_prototype.png" width="600px"/>
+<img src="/assets/images/content/tiled_map_prototype.png" width="600px"/>
 
 ## Loading the Map
 
@@ -209,7 +209,7 @@ fun testLeft(entity: Entity): Collided? {
 }
 ```
 
-<img src="/images/content/tiled_map_integration.png" width="500px"/>
+<img src="/assets/images/content/tiled_map_integration.png" width="500px"/>
 
 ## Conclusion
 
