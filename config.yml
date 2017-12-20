@@ -2,7 +2,7 @@ title: Ninja Turdle
 email: mrturdle@ninjaturdle.com
 description: A shitty adventure.
 base_url: http://ninjaturdle.com
-deploy: deploy_ninjaturdle # rsync alias
+deploy: call deploy_ninjaturdle # rsync via alias manager
 template_engine: handlebars
 posts:
     directory: posts
