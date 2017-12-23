@@ -6,7 +6,7 @@ tags: game development, tiled, map, collision detection
 
 After [Part 2](/posts/2017-04-02-prototype-ii.html) of our prototype, Mr. Turdle can jump, fall, and walk left and right. However, because we haven't covered map loading, Mr. Turdle's movement boundaries have been arbitrarily determined to be the edge of the screen. In this tutorial we will introduce the loading of a `Tiled` map and collision detection.
 
-## Creating the Map
+## Creating the Map 
 
 First we are going to use `Aseprite` to create a tile sheet to use in our map. Next, within `Tiled`, we will create a single layer map to test collisions against.
 

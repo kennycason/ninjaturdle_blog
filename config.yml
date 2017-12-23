@@ -11,5 +11,6 @@ pages:
     - index.hbs
     - download.hbs
     - story.hbs
+    - tags.hbs
 directories:
     - assets
