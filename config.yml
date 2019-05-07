@@ -3,6 +3,7 @@ email: mrturdle@ninjaturdle.com
 description: A shitty adventure.
 base_url: http://ninjaturdle.com
 deploy: call deploy_ninjaturdle # rsync via alias manager
+date_format: MMMM d, yyyy
 template_engine: handlebars
 posts:
     directory: posts
@@ -13,4 +14,4 @@ pages:
     - story.hbs
     - tags.hbs
 directories:
-    - assets
+    - name: assets

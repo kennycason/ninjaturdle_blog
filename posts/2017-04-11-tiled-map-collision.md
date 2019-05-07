@@ -77,7 +77,7 @@ We will be using Rectangle collision in these examples, and everywhere possible 
 
 An example of what our updated `testDown()` function looks like after integrating our `Tiled` map.
 
-```{.java .numberLines startFrom="1"}
+```kotlin
 // return the tile that has the closed y-distance AND collied.
 // the entity's velocity is considered
 fun testDown(entity: Entity): Collided? {
@@ -125,12 +125,12 @@ The next issue is that the collision only works for rectangular tiles. We will n
 
 We are also going to create one more helper function to aid in falling. There is one special case with falling. After falling we want the entity to stop right on top of the tile. This means that in a `Grounded` state, Ninja will never be colliding with a tile; he will instead reside one pixel immediately above the ground tile. With our current setup this would result in Mr. Ninja continually falling, resetting `landTime` variables, and in general causing state transition pain as it bounces back and forth between `Falling` and `Grounded` states. This is easy to solve by modifying our `testDown` function to test one pixel below the entity like:
 
-```{.java .numberLines startFrom="1"}
+```kotiln
 entityHitbox.y += entity.velocity.y - 1
 ```
 
 We will name our convenience function `CollisionChecker.fall()`. This class will constantly check if the entity should fall, and handle the transition between `Falling`/`Grounded` states in a smooth manner.
-```{.java .numberLines startFrom="1"}
+```kotlin
 fun fall(entity: Entity) {
     val collided = testDown(entity)
     if (collided != null) {
@@ -151,7 +151,7 @@ fun fall(entity: Entity) {
 
 We can now finally update our `Ninja.handleFalling()` function to handle when Mr. Ninja should fall. This significantly cleans up our `handleFalling()` code as the complex collision detection logic is pushed into a dedicated class.
 
-```{.java .numberLines startFrom="1"}
+```kotiln
 private fun handleFalling() {
     // vertical movements
     if (gravityState !== GravityState.GROUNDED) {
@@ -177,7 +177,7 @@ private fun handleFalling() {
 
 In previous sections we hadn't added horizontal collision detection but it is handled very similarly by adding a `testLeft()` and `testRight()` function to the `CollisoinChecker` class. The only real modification are the x/y ranges we will check, and the ordering of which we check the tiles. Recall that we want to test the tiles the entity is most likely to encounter first. An example of `testLeft()` is below.
 
-```{.java .numberLines startFrom="1"}
+```kotlin
 // return the tile that has the closed x-distance AND collied.
 // the entity's velocity is considered
 fun testLeft(entity: Entity): Collided? {

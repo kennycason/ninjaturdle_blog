@@ -1,3 +1,14 @@
+html {
+  background-color: black;
+}
+
+body {
+  background-color: black;
+  color: white;
+  background: url("/assets/images/blog_bg.gif") left top repeat;
+  background-size: 96px 96px;
+}
+
 header {
     margin-bottom: 10px;
 }
@@ -10,7 +21,7 @@ header #logo {
   display: block;
   width: 360px; /* 232 */
   height: 128px;
-  float: left;
+  float: left; 
 }
 
 header .screenshot {
@@ -30,23 +41,6 @@ header .screenshot2 {
   width: 380px;
   height: 128px;
   float: left;
-}
-
-header #navigation {
-  text-align: right;
-}
-
-header #navigation a {
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 12px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-header #navigation a :hover {
-  color: #0099ff;
 }
 
 footer .footer-image {
@@ -70,10 +64,23 @@ table, th, td {
    border: 1px solid;
 }
 
+a {
+  color: white;
+}
+
+a:hover {
+  color: grey;
+}
+
 a.tag:after {
     content: ',';
 }
 
 a.tag:last-of-type:after {
     content: '';
+}
+
+.panel,
+.panel-default {
+  background-color: #333;
 }
