@@ -2,3 +2,7 @@ pre {
 	padding: 0px;
 	border: none;
 }
+
+code {
+	background-color: black !important;
+}

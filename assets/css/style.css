@@ -7,6 +7,7 @@ body {
   color: white;
   background: url("/assets/images/blog_bg.gif") left top repeat;
   background-size: 96px 96px;
+  font-size: 16px;
 }
 
 header {
@@ -72,15 +73,16 @@ a:hover {
   color: grey;
 }
 
-a.tag:after {
-    content: ',';
-}
-
-a.tag:last-of-type:after {
-    content: '';
-}
-
 .panel,
 .panel-default {
   background-color: #333;
+}
+
+.tag {
+  border: solid 1px black;
+  background-color: #444;
+}
+
+.post-panel {
+  padding: 15px;
 }

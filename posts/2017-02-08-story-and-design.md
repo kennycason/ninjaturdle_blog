@@ -22,15 +22,15 @@ With a mission and approximate story in place I next set out to determine where 
 With all these new enemies in mind, plus my mental block on creative ways to make the whole game occur within the host's body, I decided to make the whole game take place in the bathroom. The setting is as following. The host is sitting on a toilet. After clearing the host's body, Mr. Turdle will traverse the toilet bowl into the underground pipes. The pipes lead up and through the sink. Upon the sink lies a couple flower pots which lead up into a maze of flower and plants. I figured this is perhaps a good place to throw in some infected insects. Mr. Turdle could also traverse down the sink area into a cat litter box and/or trash can. The idea being that the cat litter box could be a sort of underground maze through the cat litter. Of course each area has it's own special items, weapons, and unique challenges. Perhaps, the item to make Mr. Turdle immune to stomach acid lies in the cabinet under the sink? An anti-acid pill perhaps? Many events began to fall in place over the next few hours, days, and weeks.
 
 The brainstorming session led to the below world overview:
-<img src="/assets/images/content/story_2.jpg" width="800px"/>
+<img src="/assets/images/content/story_2.jpg" width="100%"/>
 
 I was feeling pretty happy with the new scope and size of Ninja Turdle. It seems large enough to be enjoyable, but not too complex to be impossible to build. My next step was to start brainstorming content, items, bosses, power-ups to throw into the world. This was a particularly fun part of the design process for me. The design process was simple, my good friend Steve and I went to my favorite cafe, and we came up with an exhaustive list of power-ups and ideas for the game. We were not worried about fitting it all together, but just to come up with a lot of content that we could prune down later. Below are some samples of the resulting notes.
 
 Sample enemies<br/>
-<img src="/assets/images/content/story_3.jpg" width="400px"/><img src="/assets/images/content/story_7.jpg" width="400px"/>
+<img src="/assets/images/content/story_3.jpg" width="100%"/><img src="/assets/images/content/story_7.jpg" width="100%"/>
 
 Sample notes<br/>
-<img src="/assets/images/content/story_1.jpg" width="800px"/>
+<img src="/assets/images/content/story_1.jpg" width="100%"/>
 
 This was all I really needed to justify me starting the coding of the game which I will go into the next post. Many of these ideas become more refined overtime. Eventually, I ended up with more detailed story plans. For example, when designing the first area within the stomach, I utilized [Evernote](https://evernote.com/) to capture the step-by-step events. (I actually record all my notes and thoughts in Evernote.)
 
@@ -62,6 +62,6 @@ I have a running list of events like above for many sections of the game. I stri
 Lastly, I start drawing out what each map will look like at a high level. Namely mapping which rooms connect to which rooms. I use this as a basis for designing room layout/design which I will ultimately design sprites for and maps via the Tiled map editor.  
 
 The below image is what a simple example map design will look like for me. Then I fill in more detail such as the style of the room, items, special events, and such.
-<img src="/assets/images/content/story_6.jpg" width="500px"/>
+<img src="/assets/images/content/story_6.jpg" width="100%"/>
 
 This is the basic design process that I go through when designing a video game. In short, I like to keep my designing/planning light-weight, and work to get something in place that I can quickly iterate on. In the next posts I will begin covering the actually implementation of these ideas into code.

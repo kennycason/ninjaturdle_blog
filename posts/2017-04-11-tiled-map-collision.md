@@ -12,11 +12,11 @@ First we are going to use `Aseprite` to create a tile sheet to use in our map. N
 
 The tile sheet is essentially a large sprite that will contain all the tiles we intend on using in our map. Each tile is 16x16 pixel section of the tile sheet. Our first sprite sheet looks something like:
 
-<img src="/assets/images/content/tiled_tilesheet.png" width="400px"/>
+<img src="/assets/images/content/tiled_tilesheet.png" width="60%"/>
 
 My tile sheet has since accumulated a few more tiles. I recommend not spending too much time on the tiles as they are very likely to change as you flush out your game more. That said, do whatever makes you enjoy programming your game. I'm not going to lie, I am pretty proud of those previous two tiles. :)
 
-<img src="/assets/images/content/tiled_tilesheet_full.png" width="500px"/>
+<img src="/assets/images/content/tiled_tilesheet_full.png" width="75%"/>
 
 Now time to fire up `Tiled`.
 
@@ -24,13 +24,13 @@ Lets create a 100x17 map with one layer. Name that layer "main". We will identif
 
 A little bit of editing yields us with this beauty.
 
-<img src="/assets/images/content/tiled_map_prototype.png" width="600px"/>
+<img src="/assets/images/content/tiled_map_prototype.png" width="100%"/>
 
 ## Loading the Map
 
 Fortunately, `LibGDX` does all the heavily lifting and provides classes for not only loading `Tiled` maps, but also rendering them. This can be down with two lines of code.
 
-```{.java .numberLines startFrom="1"}
+```kotlin
 var map: TiledMap = TmxMapLoader().load("map/" + mapName + ".tmx")
 var mapRenderer: TiledMapRenderer =
                   OrthogonalTiledMapRenderer(map, gameContext.batch)
@@ -38,7 +38,7 @@ var mapRenderer: TiledMapRenderer =
 
 For convenience the map and mapRenderer will be stored within our previously created `GameContext`. Rendering the map requires only a few lines of code added to the `GameScreen.render` loop.
 
-```{.java .numberLines startFrom="1"}
+```kotlin
 // recalculates the projection and view matrix of this camera.
 gameContext.camera.update()
 // Prepare for rendering sprites, must be called before rendering.
@@ -151,7 +151,8 @@ fun fall(entity: Entity) {
 
 We can now finally update our `Ninja.handleFalling()` function to handle when Mr. Ninja should fall. This significantly cleans up our `handleFalling()` code as the complex collision detection logic is pushed into a dedicated class.
 
-```kotiln
+
+```kotlin
 private fun handleFalling() {
     // vertical movements
     if (gravityState !== GravityState.GROUNDED) {

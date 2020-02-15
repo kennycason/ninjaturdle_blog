@@ -10,7 +10,7 @@ posts:
     template: post.hbs
 pages:
     - index.hbs
-    - download.hbs
+    - music.hbs
     - story.hbs
     - tags.hbs
 directories:
