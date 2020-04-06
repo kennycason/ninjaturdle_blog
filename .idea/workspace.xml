@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7eff7b4b-7164-47fa-b6aa-7b0711f61aec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/music.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/2020-02-20-offiical-release.md" beforeDir="false" afterPath="$PROJECT_DIR$/posts/2020-02-20-offiical-release.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.hbs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,15 +23,15 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/posts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/posts" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets/images/content" />
-      <recent name="$PROJECT_DIR$/posts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -57,7 +59,9 @@
       <workItem from="1581722081476" duration="6945000" />
       <workItem from="1581900094166" duration="2065000" />
       <workItem from="1582450236395" duration="569000" />
-      <workItem from="1583662071034" duration="447000" />
+      <workItem from="1583662071034" duration="551000" />
+      <workItem from="1584031947909" duration="953000" />
+      <workItem from="1586144847262" duration="1032000" />
     </task>
     <servers />
   </component>

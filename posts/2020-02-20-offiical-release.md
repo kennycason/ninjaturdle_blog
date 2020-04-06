@@ -16,7 +16,7 @@ tags: game development, steam, release
 </div>
 
 ## Trailer
-<div style="display: flex;">
+<div class="iframe-video-wrapper">
 <iframe 
    style="margin-left: auto; margin-right: auto;"
    width="560" 
